@@ -123,14 +123,7 @@ var testData = {
     ]
 }
 
-/**
- * Fetches sensor data from URL
- * @param url - Full URL for API sensor data request
- */
-function fetchSensorData(url) {
-    var response = fetch(url);
-    var json = response.json();
-};
+
 
 
 /**
@@ -218,25 +211,29 @@ function updatePageCSS() {
 
 // Code Flow
 
-
+setInterval(() => { updateSensorData() }, 8000);
 setInterval(() => { updatePageCSS() }, 10000);
 setInterval(() => { console.log("10 seconds done") }, 10000);
 
 // POSTMAN Code
-var myHeaders = new Headers();
-myHeaders.append("Accept", "application/json;odata=nometadata");
+function updateSensorData() {
+    var myHeaders = new Headers();
+    myHeaders.append("Accept", "application/json;odata=nometadata");
 
-var requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow',
-    mode: 'cors'
-};
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow',
+        mode: 'cors'
+    };
 
-fetch("https://servicebustriggerpython.azurewebsites.net/api/getTelemetryPython", requestOptions)
-    .then(response => response.text())
-    .then(result => updatePageData(result))
-    .catch(error => console.log('error', error));
+    fetch("https://servicebustriggerpython.azurewebsites.net/api/getTelemetryPython", requestOptions)
+        .then(response => response.text())
+        .then(result => updatePageData(result))
+        .catch(error => console.log('error', error));
+    document.getElementById(roomHTML).innerHTML = result;
+}
+
 
 
 
@@ -276,3 +273,12 @@ function updatePage(json) {
     updatePageData(json);
     updatePageCSS();
 }
+
+/**
+ * Fetches sensor data from URL
+ * @param url - Full URL for API sensor data request
+ */
+function fetchSensorData(url) {
+    var response = fetch(url);
+    var json = response.json();
+};

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HS PF Dashboard for Students in corparation with Asseco GmbH">
+    <title>Student Dashboard</title>
+    <link href="layout.css" rel="stylesheet" type="text/css">
+</head>
+<center>
+    <h1>Student Dashboard</h1>
+</center>
+<p>
+    <b>
+        <h3>Above you can see:</h3>
+    </b>
+</p>
+<ul>
+    <li>Free rooms marked green</li>
+    <li>Occupied rooms marked red</li>
+    <li>The rooms will update in 10 seconds by reading from the test json data</li>
+</ul>
+<span>
+    <caption>
+        <big>Turm 1</big>
+    </caption>
+    <caption>
+        <big>Turm 2</big>
+    </caption>
+    <caption>
+        <big>Turm 3</big>
+    </caption>
+</span>
+
+<body height="75%" width="75%">
+    <main>
+        <center>
+            <table id="rooms" height="500px" width="900px">
+                <tr>
+                    <td id=device00 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>00</td>
+                    <td id=device01 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>01</td>
+                    <td class="XX">xx</td>
+                    <td id=device02 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>02</td>
+                    <td id=device03 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>03</td>
+                    <td class="XX">xx</td>
+                    <td id=device04 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>04</td>
+                    <td id=device05 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>05</td>
+                </tr>
+                <tr>
+                    <td id=device06 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>06</td>
+                    <td class="GG">gg</td>
+                    <td class="GG">gg</td>
+                    <td class="GG">gg</td>
+                    <td class="GG">gg</td>
+                    <td class="GG">gg</td>
+                    <td class="GG">gg</td>
+                    <td id=device07 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>07</td>
+                </tr>
+                <tr>
+                    <td id=device08 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>08</td>
+                    <td id=device09 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>09</td>
+                    <td class="XX">xx</td>
+                    <td id=device10 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>10</td>
+                    <td id=device11 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>11</td>
+                    <td class="XX">xx</td>
+                    <td id=device12 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>12</td>
+                    <td id=device13 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>13</td>
+                </tr>
+                <tr>
+                    <td id=device14 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>14</td>
+                    <td id=device15 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>15</td>
+                    <td class="XX">xx</td>
+                    <td id=device16 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>16</td>
+                    <td id=device17 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>17</td>
+                    <td class="XX">xx</td>
+                    <td id=device18 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>18</td>
+                    <td id=device19 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>19</td>
+                </tr>
+                <tr>
+                    <td id=device20 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>20</td>
+                    <td id=device21 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>21</td>
+                    <td class="XX">xx</td>
+                    <td id=device22 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>22</td>
+                    <td id=device23 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>23</td>
+                    <td class="XX">xx</td>
+                    <td id=device24 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>24</td>
+                    <td id=device25 data-temperature=0 data-infrared=0 data-illuminance=0 data-airquality=0 data-humidity=0>25</td>
+                </tr>
+
+            </table>
+        </center>
+        <script src="scripts.js"></script>
+    </main>
+    <footer>
+
+        <div class="footer">
+            <p class="left">Hochschule Pforzheim</p>
+            <p class="right">Powered by Asseco</p>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
+
+<!--
+      <caption><h3 style="margin-left:85px;margin-right:30px;">Turm1</h3></caption>
+-->

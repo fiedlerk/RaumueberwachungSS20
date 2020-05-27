@@ -171,8 +171,10 @@ function updateRoomElementColour(roomHTML) {
  * @param {*} json - the json data recieved by the API call
  */
 function updatePageData(json) {
-    var data = JSON.parse(json);
-    var values = data.value;
+    console.log(json.value[0]);
+    //var data = JSON.parse(json);
+    //var values = data.value;
+    var values = json.value;
     console.log(values);
     for (i = 0; i < values.length; i++) {
         var room = values[i].Device_Id;                     // Device_Id returns in the format "device01"
@@ -211,7 +213,7 @@ function updatePageCSS() {
 
 // Code Flow
 
-setInterval(() => { updateSensorData() }, 8000);
+setInterval(() => { updatePageData(testData) }, 8000);
 setInterval(() => { updatePageCSS() }, 10000);
 setInterval(() => { console.log("10 seconds done") }, 10000);
 
@@ -231,7 +233,7 @@ function updateSensorData() {
         .then(response => response.text())
         .then(result => updatePageData(result))
         .catch(error => console.log('error', error));
-    document.getElementById(roomHTML).innerHTML = result;
+    document.getElementById("test").innerHTML = result;
 }
 
 

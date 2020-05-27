@@ -171,6 +171,8 @@ function updateRoomElementColour(roomHTML) {
  * @param {*} json - the json data recieved by the API call
  */
 function updatePageData(json) {
+    console.log(json);
+    console.log(json.value);
     console.log(json.value[0]);
     //var data = JSON.parse(json);
     //var values = data.value;
@@ -213,7 +215,7 @@ function updatePageCSS() {
 
 // Code Flow
 
-setInterval(() => { updatePageData(testData) }, 8000);
+setInterval(() => { updateSensorData() }, 10000);
 setInterval(() => { updatePageCSS() }, 10000);
 setInterval(() => { console.log("10 seconds done") }, 10000);
 

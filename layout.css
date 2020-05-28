@@ -1,52 +1,103 @@
-
-
-p{margin-left:85px;}
-li {margin-left:85px;}
-h3{margin-left:100px;}
-
-table{border-collapse: collapse;}
-
-th, td {
-  border-bottom: 1px solid #ddd;
-  border-left: 1px solid #ddd;
+html, body {
+  height: 100%;
 }
 
-td:first-child, tr:first-child{border-left: none;}
-tr:last-child {border-bottom: hidden;}
+p{margin-left:85px;font-family: Arial}
+li {margin-left:85px;font-family: Arial}
+h3{margin-left:100px;font-family: Arial}
+h1{font-family: Arial; font-size: 56px;}
+
+table{border-collapse: collapse;font-family: Arial }
+
+title{font-family: Arial}
+
+th, td {
+  border-bottom: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  border-top: 3px solid black;
+  font-family: Arial;
+  width: 12.5%;
+}
+
+span{
+  font-family: Arial;
+  font-size: 30px;
+}
 
 
-td{background-color: red;text-align: center;vertical-align: middle;}
+td{background-color: #ea9999;text-align: center;vertical-align: middle;font-family: Arial}
+
+.time {
+  font-size: 80px;
+  font-family: Arial;
+  float:left;
+  margin: 10px;
+}
 
 .XX {
   background-color: white;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+
 }
+.dashboard{
+    text-align: center;
+    display: inline-block;
+    width: 65%;
+    height: 100%;
+    border-style: solid;
+    border-color: coral;
+    border-width: 2px;
+    margin-left: 15%;
+    margin-right: 15%;
+    min-width: -webkit-fill-available;
+}
+
 .GG {
-  background-color: darkgrey;
+  background-color: #d9d9d9;
+  border-left: none;
+  border-right: none;
+
 }
 
 .left{
   float:left;
+  margin-left: 10px;
 }
 
 .right{
   float:right;
-  margin-right: 60px;
+  margin-right: 10px;
 }
 
 big{
-  margin-left:300px; margin-right: 20px;
+  margin-left:300px; margin-right: 20px;font-family: Arial
 }
 .footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: lightgrey;
+  background-color: #f3f3f3;
   color: black;
   text-align: center;
+  font-family: Arial;
 }
 
+.serif {
+  font-family: "Times New Roman", Times, serif;
+}
 
+.sansserif {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.monospace {
+  font-family: "Lucida Console", Courier, monospace;
+}
 
 /*td{border:1px solid black;}
 float:center;margin-left:100px;

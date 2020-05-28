@@ -159,9 +159,9 @@ function updateRoomElementAttribute(roomHTML, type, value) {
  */
 function updateRoomElementColour(roomHTML) {
     if (document.getElementById(roomHTML).getAttribute("data-temperature") > 0) {
-        document.getElementById(roomHTML).style = "background-color: red";
+        document.getElementById(roomHTML).style = "background-color: #ea9999";
     } else {
-        document.getElementById(roomHTML).style = "background-color: green";
+        document.getElementById(roomHTML).style = "background-color: #b6d7a8";
     }
 
 }

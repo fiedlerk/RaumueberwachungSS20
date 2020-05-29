@@ -231,7 +231,7 @@ function updateSensorData() {
         mode: 'cors'
     };
 
-    fetch("https://servicebustriggerpython.azurewebsites.net/api/getTelemetryPython", requestOptions)
+    fetch("http://getfromtable.azurewebsites.net/api/getfromtable", requestOptions)
         .then(response => response.text())
         .then(result => updatePageData(result))
         .catch(error => console.log('error', error));

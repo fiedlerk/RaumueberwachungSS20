@@ -249,7 +249,8 @@ function fetchSensorData() {
         method: 'GET',
         headers: myHeaders,
         body: raw,
-        redirect: 'follow'
+        redirect: 'follow',
+        mode: 'no-cors'
     };
 
     fetch("http://getfromtable.azurewebsites.net/api/getfromtable", requestOptions)

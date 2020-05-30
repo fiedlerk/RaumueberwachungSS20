@@ -263,7 +263,13 @@ function fetchSensorData() {
 
 fetchSensorData();
 
+var url = 'http://api.alice.com/cors';
+var xhr = createCORSRequest('GET', url);
+xhr.send();
 
+var url = 'http://getfromtable.azurewebsites.net/api/getfromtable';
+var xhr = createCORSRequest('GET', url);
+xhr.send();
 
 
 

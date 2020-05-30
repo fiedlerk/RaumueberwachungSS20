@@ -244,12 +244,9 @@ function fetchSensorData() {
     myHeaders.append("Accept", "application/json");
     myHeaders.append("Content-Type", "text/plain");
 
-    var raw = "{url=\"https://storageraumueberwachung.table.core.windows.net/Last2()?sv=2019-10-10&ss=bfqt&srt=sco&sp=rwdlacupx&se=2023-07-31T22:47:36Z&st=2020-05-13T14:47:36Z&spr=https&sig=4skbsTU9tMlfSqFJhB1rTw16nVRIA6EVzxEkCmrNneE%3D\"}";
-
     var requestOptions = {
         method: 'GET',
         headers: myHeaders,
-        body: raw,
         credentials: 'include',
         redirect: 'follow',
         mode: 'no-cors'

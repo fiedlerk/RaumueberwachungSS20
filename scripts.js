@@ -263,17 +263,7 @@ function fetchSensorData() {
 
 fetchSensorData();
 
-var url = 'http://api.alice.com/cors';
-var xhr = createCORSRequest('GET', url);
-xhr.send();
-
-var url = 'http://getfromtable.azurewebsites.net/api/getfromtable';
-var xhr = createCORSRequest('GET', url);
-xhr.send();
-
 //POSTMAN xhr
-var data = "{url=\"https://storageraumueberwachung.table.core.windows.net/Last2()?sv=2019-10-10&ss=bfqt&srt=sco&sp=rwdlacupx&se=2023-07-31T22:47:36Z&st=2020-05-13T14:47:36Z&spr=https&sig=4skbsTU9tMlfSqFJhB1rTw16nVRIA6EVzxEkCmrNneE%3D\"}";
-
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 
@@ -285,9 +275,8 @@ xhr.addEventListener("readystatechange", function () {
 
 xhr.open("GET", "http://getfromtable.azurewebsites.net/api/getfromtable");
 xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "text/plain");
 
-console.log(xhr.send(data));
+xhr.send();
 
 
 

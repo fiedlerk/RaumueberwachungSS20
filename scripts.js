@@ -232,7 +232,7 @@ function updateSensorData() {
         mode: 'cors'
     };
 
-    fetch("http://getfromtable.azurewebsites.net/api/getfromtable", requestOptions)
+    fetch("https://getfromtable.azurewebsites.net/api/getfromtable", requestOptions)
         .then(response => response.text())
         .then(result => updatePageData(result))
         .catch(error => console.log('error', error));
@@ -252,7 +252,7 @@ function fetchSensorData() {
         mode: 'no-cors'
     };
 
-    fetch("http://getfromtable.azurewebsites.net/api/getfromtable", requestOptions)
+    fetch("https://getfromtable.azurewebsites.net/api/getfromtable", requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
@@ -270,7 +270,7 @@ xhr.addEventListener("readystatechange", function () {
     }
 });
 
-xhr.open("GET", "http://getfromtable.azurewebsites.net/api/getfromtable");
+xhr.open("GET", "https://getfromtable.azurewebsites.net/api/getfromtable");
 xhr.setRequestHeader("Accept", "application/json");
 
 xhr.send();

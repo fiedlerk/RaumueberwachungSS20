@@ -227,6 +227,7 @@ function updateSensorData() {
     var requestOptions = {
         method: 'GET',
         headers: myHeaders,
+        credentials: 'same-origin',
         redirect: 'follow',
         mode: 'cors'
     };
@@ -249,6 +250,7 @@ function fetchSensorData() {
         method: 'GET',
         headers: myHeaders,
         body: raw,
+        credentials: 'same-origin',
         redirect: 'follow',
         mode: 'no-cors'
     };

@@ -173,13 +173,16 @@ function updateRoomElementColour(roomHTML) {
 function updatePageData(json) {
     console.log(json);
     document.getElementById("test").innerHTML = json;
-    console.log(json.value);
-    console.log(json.value[0]);
+
     var data = JSON.parse(json);
     var values = data.value;
     console.log("Here is data" + data);
     var values = json.value;
     console.log(values);
+
+    console.log(json.value);
+    console.log(json.value[0]);
+
     for (i = 0; i < values.length; i++) {
         var room = values[i].Device_Id;                     // Device_Id returns in the format "device01"
         var type = values[i].Sensor_Id;                     // Sensor_Id returns the type of sensor

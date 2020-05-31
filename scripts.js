@@ -172,6 +172,7 @@ function updateRoomElementColour(roomHTML) {
  */
 function updatePageData(json) {
     console.log(json);
+    document.getElementById("test").innerHTML = json;
     console.log(json.value);
     console.log(json.value[0]);
     //var data = JSON.parse(json);
@@ -236,45 +237,8 @@ function updateSensorData() {
         .then(response => response.text())
         .then(result => updatePageData(result))
         .catch(error => console.log('error', error));
-    document.getElementById("test").innerHTML = result;
+
 }
-
-function fetchSensorData() {
-    var myHeaders = new Headers();
-    myHeaders.append("Accept", "application/json");
-    myHeaders.append("Content-Type", "text/plain");
-
-    var requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        credentials: 'omit',
-        redirect: 'follow',
-        mode: 'no-cors'
-    };
-
-    fetch("https://getfromtable.azurewebsites.net/api/getfromtable", requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
-}
-
-fetchSensorData();
-
-//POSTMAN xhr
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-
-xhr.addEventListener("readystatechange", function () {
-    if (this.readyState === 4) {
-        console.log(this.responseText);
-    }
-});
-
-xhr.open("GET", "https://getfromtable.azurewebsites.net/api/getfromtable");
-xhr.setRequestHeader("Accept", "application/json");
-
-xhr.send();
-
 
 
 

@@ -175,8 +175,11 @@ function updatePageData(json) {
     document.getElementById("test").innerHTML = json;
 
     var data = JSON.parse(json);
-    var values = data.value;
     console.log("Here is data" + data);
+
+    var values = data.value;
+    console.log("Here is the first sensor datum test 1" + data.value[0]);
+    console.log("Here is the first sensor datum test 2" + values.value[0]);
     var values = json.value;
     console.log(values);
 

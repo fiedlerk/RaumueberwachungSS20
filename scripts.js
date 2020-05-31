@@ -174,7 +174,7 @@ function updatePageData(json) {
     console.log(json);
     document.getElementById("test").innerHTML = json;
 
-    console.log(json.value);
+    console.log(json[0]);
     console.log(json.value[0]);
 
     var data = JSON.parse(json);

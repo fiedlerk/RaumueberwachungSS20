@@ -218,10 +218,9 @@ function updatePageCSS() {
 
 
 // Code Flow
-
-setInterval(() => { updateSensorData() }, 10000);
+updateSensorData()
+setInterval(() => { updateSensorData() }, 300000);
 setInterval(() => { updatePageCSS() }, 10000);
-setInterval(() => { console.log("10 seconds done") }, 10000);
 
 // POSTMAN Code
 function updateSensorData() {

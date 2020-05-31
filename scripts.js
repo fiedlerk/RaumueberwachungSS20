@@ -178,10 +178,7 @@ function updatePageData(json) {
     console.log(data.value[0]);
     var values = data.value;
     console.log(values);
-    console.log("Here is the first sensor datum" + values.value[0]);
-
-
-
+    console.log("This is the first value:" + values[0]);
 
     for (i = 0; i < values.length; i++) {
         var room = values[i].Device_Id;                     // Device_Id returns in the format "device01"

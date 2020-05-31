@@ -3,7 +3,7 @@ Rooms are read from TOP LEFT to BOTTOM RIGHT
 Rooms exist in a table with 5 ROWS & 8 COLUMNS
 Not all cells of the table are a room
 
-There are 40 cells in the table with the following room layout
+There are 40 cells in the table with the following room layout & 26 Rooms
 
 00 01 XX 02 03 XX 04 05
 06 GG GG GG GG GG GG 07
@@ -146,7 +146,9 @@ function updateRoomElementAttribute(roomHTML, type, value) {
         case "aq_iaq_index":
             document.getElementById(roomHTML).setAttribute("data-airquality", value);
             break;
-
+        case "motion_detector":
+            document.getElementById(roomHTML).setAttribute("data-infrared", value);
+            break;
         default:
         // Error code
     }
@@ -202,7 +204,7 @@ function updatePageData(json) {
  * Goes through all room elements & updates their CSS based on their infrared
  */
 function updatePageCSS() {
-    for (i = 0; i < 25; i++) {
+    for (i = 0; i < 26; i++) {
         if (i < 10) {
             // Device ids are double digited i.e 01, 02 up till 09
             updateRoomElementColour("device0" + i);

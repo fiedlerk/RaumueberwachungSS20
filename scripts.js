@@ -174,7 +174,6 @@ function updateRoomElementColour(roomHTML) {
  */
 function updatePageData(json) {
     console.log(json);
-    document.getElementById("test").innerHTML = json;
     var data = JSON.parse(json);
 
     console.log(data.value[0]);

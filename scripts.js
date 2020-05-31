@@ -175,8 +175,9 @@ function updatePageData(json) {
     document.getElementById("test").innerHTML = json;
     console.log(json.value);
     console.log(json.value[0]);
-    //var data = JSON.parse(json);
-    //var values = data.value;
+    var data = JSON.parse(json);
+    var values = data.value;
+    console.log("Here is data" + data);
     var values = json.value;
     console.log(values);
     for (i = 0; i < values.length; i++) {

@@ -174,17 +174,21 @@ function updatePageData(json) {
     console.log(json);
     document.getElementById("test").innerHTML = json;
 
+    console.log(json.value);
+    console.log(json.value[0]);
+
     var data = JSON.parse(json);
     console.log("Here is data" + data);
 
     var values = data.value;
     console.log("Here is the first sensor datum test 1" + data.value[0]);
-    console.log("Here is the first sensor datum test 2" + values.value[0]);
+
     var values = json.value;
     console.log(values);
+    console.log("Here is the first sensor datum test 2" + values.value[0]);
 
-    console.log(json.value);
-    console.log(json.value[0]);
+
+
 
     for (i = 0; i < values.length; i++) {
         var room = values[i].Device_Id;                     // Device_Id returns in the format "device01"

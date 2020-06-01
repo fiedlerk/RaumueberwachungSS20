@@ -91,8 +91,14 @@ big{
   stroke:rgb(0,0,0);
 }
 
-.right-legend {
+.center-legend {
   fill:#ea9999;
+  stroke-width: 5px;
+  stroke:rgb(0,0,0);
+}
+
+.right-legend {
+  fill:#d9d9d9;
   stroke-width: 5px;
   stroke:rgb(0,0,0);
 }

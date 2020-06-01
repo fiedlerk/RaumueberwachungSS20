@@ -1,15 +1,15 @@
 /* 
 Rooms are read from TOP LEFT to BOTTOM RIGHT
-Rooms exist in a table with 5 ROWS & 8 COLUMNS
+Rooms exist in a table with 4 ROWS & 8 COLUMNS
 Not all cells of the table are a room
 
-There are 40 cells in the table with the following room layout & 26 Rooms
+There are 32 cells in the table with the following room layout & 20 Rooms
 
 00 01 XX 02 03 XX 04 05
 06 GG GG GG GG GG GG 07
 08 09 XX 10 11 XX 12 13
 14 15 XX 16 17 XX 18 19
-20 21 XX 22 23 XX 24 25
+
 
 XX = Table cell which is an empty space & not part of the building
 GG = Hallway that goes between the 3 main buildings, "Gang"
@@ -203,7 +203,7 @@ function updatePageData(json) {
  * Goes through all room elements & updates their CSS based on their infrared
  */
 function updatePageCSS() {
-    for (i = 0; i < 26; i++) {
+    for (i = 0; i < 20; i++) {
         if (i < 10) {
             // Device ids are double digited i.e 01, 02 up till 09
             updateRoomElementColour("device0" + i);
@@ -213,13 +213,6 @@ function updatePageCSS() {
 
     }
 }
-
-
-
-// Code Flow
-updateSensorData()
-setInterval(() => { updateSensorData() }, 300000);
-setInterval(() => { updatePageCSS() }, 10000);
 
 // POSTMAN Code
 function updateSensorData() {
@@ -241,34 +234,7 @@ function updateSensorData() {
 
 }
 
-
-
-//Deprecetiated functions
-
-/**
- * Function that takes in the Room ID and returns the mapped HTML table tag id for that room
- * @param room - roomID of the room
- */
-function getRoomElement(room) {
-    var roomHTML = "td" + room;
-    return roomHTML;
-}
-
-/*
-Page loop where page is updated every 5 minutes
-*/
-
-function loopPage() {
-    while (true) {
-
-    }
-}
-
-/*
-Updates Page data & then CSS
-*/
-
-function updatePage(json) {
-    updatePageData(json);
-    updatePageCSS();
-}
+// Code Flow
+updateSensorData()
+setInterval(() => { updateSensorData() }, 300000);
+setInterval(() => { updatePageCSS() }, 10000);

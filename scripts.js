@@ -185,9 +185,7 @@ function updatePageData(json) {
         var room = values[i].Device_Id;                     // Device_Id returns in the format "device01"
         var type = values[i].Sensor_Id;                     // Sensor_Id returns the type of sensor
         var value = values[i].Value;
-        console.log("In the room " + room);
-        console.log("sensor of type " + type);
-        console.log("shows a value of " + value);
+        console.log("In the room " + room + "with sensor of type " + type + "shows a value of " + value);
 
         // IF AND ONLY IF DEVICEIDs ARE MAPPED TO ROOM MAPPING, IF NOT CREATE A FUNCTION TO MAP OUT
         // var roomHTML = getRoomElement(room);
@@ -238,3 +236,66 @@ function updateSensorData() {
 updateSensorData()
 setInterval(() => { updateSensorData() }, 300000);
 setInterval(() => { updatePageCSS() }, 10000);
+
+
+//
+function changeMode(newMode) {
+    updatePageCSS(newMode);
+    updateInnerHTML();
+}
+
+function updateInnerHTML(mode) {
+    switch (mode) {
+        case "motion":
+            var roomNames = ["W1.05.06", "W1.05.05", "W1.05.04", "W1.05.03", "W1.05.02", "W1.05.01",
+                "W1.04.06", "W1.04.01",
+                "W1.03.06", "W1.03.05", "W1.03.04", "W1.03.03", "W1.03.02", "W1.03.01",
+                "W1.02.06", "W1.02.05", "W1.02.04", "W1.02.03", "W1.02.02", "W1.02.01"];
+            for (i = 0; i < 20; i++) {
+                if (i < 10) {
+                    // Device ids are double digited i.e 01, 02 up till 09
+                    document.getElementById("device0" + i).innerHTML = roomNames[i];
+                } else {
+                    document.getElementById("device" + i).innerHTML = roomNames[i];
+                }
+            }
+            break;
+        case "temperature":
+            for (i = 0; i < 20; i++) {
+                if (i < 10) {
+                    // Device ids are double digited i.e 01, 02 up till 09
+                    var temperature = document.getElementById("device0" + i).getAttribute("data-temperature");
+                    document.getElementById("device0" + i).innerHTML = temperature;
+                } else {
+                    var temperature = document.getElementById("device" + i).getAttribute("data-temperature");
+                    document.getElementById("device" + i).innerHTML = temperature;
+                }
+            }
+            break;
+        case "airquality":
+            for (i = 0; i < 20; i++) {
+                if (i < 10) {
+                    // Device ids are double digited i.e 01, 02 up till 09
+                    var airquality = document.getElementById("device0" + i).getAttribute("data-airquality");
+                    document.getElementById("device0" + i).innerHTML = airquality;
+                } else {
+                    var airquality = document.getElementById("device" + i).getAttribute("data-airquality");
+                    document.getElementById("device" + i).innerHTML = airquality;
+                }
+            }
+            break;
+        case "illuminance":
+            for (i = 0; i < 20; i++) {
+                if (i < 10) {
+                    // Device ids are double digited i.e 01, 02 up till 09
+                    var illuminance = document.getElementById("device0" + i).getAttribute("data-illuminance");
+                    document.getElementById("device0" + i).innerHTML = illuminance;
+                } else {
+                    var illuminance = document.getElementById("device" + i).getAttribute("data-illuminance");
+                    document.getElementById("device" + i).innerHTML = illuminance;
+                }
+            }
+            break;
+
+    }
+}

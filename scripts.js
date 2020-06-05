@@ -265,10 +265,10 @@ function updateInnerHTML(mode) {
                 if (i < 10) {
                     // Device ids are double digited i.e 01, 02 up till 09
                     var temperature = document.getElementById("device0" + i).getAttribute("data-temperature");
-                    document.getElementById("device0" + i).innerHTML = temperature;
+                    document.getElementById("device0" + i).innerHTML = temperature + " °C";
                 } else {
                     var temperature = document.getElementById("device" + i).getAttribute("data-temperature");
-                    document.getElementById("device" + i).innerHTML = temperature;
+                    document.getElementById("device" + i).innerHTML = temperature + " °C";
                 }
             }
             break;
@@ -277,10 +277,10 @@ function updateInnerHTML(mode) {
                 if (i < 10) {
                     // Device ids are double digited i.e 01, 02 up till 09
                     var airquality = document.getElementById("device0" + i).getAttribute("data-airquality");
-                    document.getElementById("device0" + i).innerHTML = airquality;
+                    document.getElementById("device0" + i).innerHTML = airquality + " IAQ";
                 } else {
                     var airquality = document.getElementById("device" + i).getAttribute("data-airquality");
-                    document.getElementById("device" + i).innerHTML = airquality;
+                    document.getElementById("device" + i).innerHTML = airquality + " IAQ";
                 }
             }
             break;
@@ -289,10 +289,10 @@ function updateInnerHTML(mode) {
                 if (i < 10) {
                     // Device ids are double digited i.e 01, 02 up till 09
                     var illuminance = document.getElementById("device0" + i).getAttribute("data-illuminance");
-                    document.getElementById("device0" + i).innerHTML = illuminance;
+                    document.getElementById("device0" + i).innerHTML = illuminance + " Lux";
                 } else {
                     var illuminance = document.getElementById("device" + i).getAttribute("data-illuminance");
-                    document.getElementById("device" + i).innerHTML = illuminance;
+                    document.getElementById("device" + i).innerHTML = illuminance + " Lux";
                 }
             }
             break;

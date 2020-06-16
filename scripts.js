@@ -359,7 +359,7 @@ updateSensorData()
 setInterval(() => { updateSensorData() }, 300000);
 
 // CSS & Page Inner HTML updated on a 10 second basis
-setInterval(() => { updatePageCSS(currentMode); updateInnerHTML(currentMode); console.log(currentMode); }, 10000);
+setInterval(() => { updatePageCSS(currentMode); updateInnerHTML(currentMode); console.log(currentMode); }, 300000);
 
 
 

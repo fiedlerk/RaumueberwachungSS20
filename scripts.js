@@ -305,7 +305,7 @@ function updateInnerHTML(mode) {
                     document.getElementById("device" + i).innerHTML = roomNames[i];
                 }
             }
-            updatePageCSS(currentMode);
+            updatePageCSS(mode);
             break;
         case "temperature":
             for (i = 0; i < numberOfRooms; i++) {
@@ -318,7 +318,7 @@ function updateInnerHTML(mode) {
                     document.getElementById("device" + i).innerHTML = temperature + " °C";
                 }
             }
-            updatePageCSS(currentMode);
+            updatePageCSS(mode);
             break;
         case "airquality":
             for (i = 0; i < numberOfRooms; i++) {
@@ -331,7 +331,7 @@ function updateInnerHTML(mode) {
                     document.getElementById("device" + i).innerHTML = airquality + " IAQ";
                 }
             }
-            updatePageCSS(currentMode);
+            updatePageCSS(mode);
             break;
         case "illuminance":
             for (i = 0; i < numberOfRooms; i++) {
@@ -344,7 +344,7 @@ function updateInnerHTML(mode) {
                     document.getElementById("device" + i).innerHTML = illuminance + " Lux";
                 }
             }
-            updatePageCSS(currentMode);
+            updatePageCSS(mode);
             break;
 
     }
@@ -359,7 +359,7 @@ updateSensorData()
 setInterval(() => { updateSensorData() }, 300000);
 
 // CSS & Page Inner HTML updated on a 10 second basis
-setInterval(() => { updatePageCSS(currentMode); updateInnerHTML(currentMode); }, 10000);
+setInterval(() => { updatePageCSS(currentMode); updateInnerHTML(currentMode); console.log(currentMode); }, 10000);
 
 
 

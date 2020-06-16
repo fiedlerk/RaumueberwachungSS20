@@ -204,7 +204,7 @@ function updateTextElementColour(roomHTML) {
     } else if (currentMode == "airquality") {
         document.getElementById(roomHTML).style = "color: #000000";
     }
-
+    console.log("done for" + roomHTML);
 }
 
 /**
@@ -298,7 +298,7 @@ function changeMode(newMode) {
 
 function updateInnerHTML(mode) {
     switch (mode) {
-        case "motion":
+        case "infrared":
             var roomNames = ["W1.5.06", "W1.5.05", "W1.5.04", "W1.5.03", "W1.5.02", "W1.5.01",
                 "W1.4.06", "W1.4.01",
                 "W1.3.06", "W1.3.05", "W1.3.04", "W1.3.03", "W1.3.02", "W1.3.01",

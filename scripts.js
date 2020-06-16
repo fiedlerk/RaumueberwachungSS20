@@ -129,6 +129,25 @@ var testData = {
 }
 
 
+// POSTMAN Code
+function updateSensorData() {
+    var myHeaders = new Headers();
+    myHeaders.append("Accept", "application/json;odata=nometadata");
+
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        credentials: 'omit',
+        redirect: 'follow',
+        mode: 'cors'
+    };
+
+    fetch("https://getfromtable.azurewebsites.net/api/getfromtable", requestOptions)
+        .then(response => response.text())
+        .then(result => updatePageData(result))
+        .catch(error => console.log('error', error));
+
+}
 
 
 /**
@@ -190,26 +209,27 @@ function updateTextElementColour(roomHTML, mode) {
     var airquality = parseInt(airquality);
 
     // Temperature Warning Visualisation
-    if (currentMode == "temperature" && temperature > 22) {
+    if (mode == "temperature" && temperature > 22) {
         document.getElementById(roomHTML).style.fontWeight = "bold";
         document.getElementById(roomHTML).style.color = "#cc4125";
         console.log("ja also funktioniert doch");
-    } else if (currentMode == "temperature" && temperature < 10) {
+
+    } else if (mode == "temperature" && temperature < 10) {
         document.getElementById(roomHTML).style.color = "#0b5394";
     } else {
         document.getElementById(roomHTML).style.color = "#000000";
     }
 
     // Illuminance Warning Visualisation
-    if (currentMode == "illuminance" && illuminance > 500) {
+    if (mode == "illuminance" && illuminance > 500) {
         document.getElementById(roomHTML).style.color = "#ffffff";
         document.getElementById(roomHTML).style.fontWeight = "bold";
-    } else if (currentMode == "illuminance") {
+    } else if (mode == "illuminance") {
         document.getElementById(roomHTML).style.color = "#000000";
     }
 
     // Air Quality Warning Visualisation
-    if (currentMode == "airquality" && airquality > 100) {
+    if (mode == "airquality" && airquality > 100) {
         document.getElementById(roomHTML).style = "color: #783f04; font-weight: bold";
     } else if (currentMode == "airquality") {
         document.getElementById(roomHTML).style = "color: #000000";
@@ -262,37 +282,8 @@ function updatePageCSS(mode) {
     }
 }
 
-// POSTMAN Code
-function updateSensorData() {
-    var myHeaders = new Headers();
-    myHeaders.append("Accept", "application/json;odata=nometadata");
-
-    var requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        credentials: 'omit',
-        redirect: 'follow',
-        mode: 'cors'
-    };
-
-    fetch("https://getfromtable.azurewebsites.net/api/getfromtable", requestOptions)
-        .then(response => response.text())
-        .then(result => updatePageData(result))
-        .catch(error => console.log('error', error));
-
-}
 
 
-
-
-/**
- * Function that changes the mode & updates the page instantly to disply that mode's information
- * @param {*} newMode 
- */
-function changeMode(newMode) {
-    updatePageCSS(newMode);
-    updateInnerHTML(newMode);
-}
 
 /**
  * Updates innerHTML of all Room elements depending on the current mode
@@ -369,3 +360,16 @@ setInterval(() => { updateSensorData() }, 300000);
 
 // CSS & Page Inner HTML updated on a 10 second basis
 setInterval(() => { updatePageCSS(currentMode); updateInnerHTML(currentMode); }, 10000);
+
+
+
+// Unused Functions
+
+/**
+ * Function that changes the mode & updates the page instantly to disply that mode's information
+ * @param {*} newMode 
+ */
+function changeMode(newMode) {
+    updatePageCSS(newMode);
+    updateInnerHTML(newMode);
+}

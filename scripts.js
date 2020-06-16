@@ -184,7 +184,8 @@ function updateTextElementColour(roomHTML) {
 
     // Temperature Warning Visualisation
     if (currentMode == "temperature" && temperature > 22) {
-        document.getElementById(roomHTML).style = "color: #cc4125; font-weight: bold";
+        document.getElementById(roomHTML).style.fontWeight = "bold";
+        document.getElementById(roomHTML).style.color = "#cc4125";
     } else if (currentMode == "temperature" && temperature < 10) {
         document.getElementById(roomHTML).style = "color: #0b5394";
     } else {

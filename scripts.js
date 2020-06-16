@@ -244,8 +244,10 @@ function updatePageCSS() {
         if (i < 10) {
             // Device ids are double digited i.e 01, 02 up till 09
             updateRoomElementColour("device0" + i);
+            updateTextElementColour("device0" + i);
         } else {
             updateRoomElementColour("device" + i);
+            updateTextElementColour("device" + i);
         }
 
     }

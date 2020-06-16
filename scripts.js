@@ -186,6 +186,7 @@ function updateTextElementColour(roomHTML) {
     if (currentMode == "temperature" && temperature > 22) {
         document.getElementById(roomHTML).style.fontWeight = "bold";
         document.getElementById(roomHTML).style.color = "#cc4125";
+        console.log("ja also funktioniert doch");
     } else if (currentMode == "temperature" && temperature < 10) {
         document.getElementById(roomHTML).style.color = "#0b5394";
     } else {

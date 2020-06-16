@@ -177,7 +177,7 @@ function updateRoomElementColour(roomHTML) {
  * This only applies for the cases of temperature, illuminance & airquality
  * @param {*} roomHTML - The HTML tag id of the room 
  */
-function updateTextElementColour(roomHTML) {
+function updateTextElementColour(roomHTML, mode) {
     // Extract date and store into variables for readability
     var temperature = document.getElementById(roomHTML).getAttribute("data-temperature");
     var illuminance = document.getElementById(roomHTML).getAttribute("data-illuminance");
@@ -248,15 +248,15 @@ function updatePageData(json) {
 /**
  * Goes through all room elements & updates their CSS based on their infrared value
  */
-function updatePageCSS() {
+function updatePageCSS(mode) {
     for (i = 0; i < numberOfRooms; i++) {
         if (i < 10) {
             // Device ids are double digited i.e 01, 02 up till 09
             updateRoomElementColour("device0" + i);
-            updateTextElementColour("device0" + i);
+            updateTextElementColour("device0" + i, mode);
         } else {
             updateRoomElementColour("device" + i);
-            updateTextElementColour("device" + i);
+            updateTextElementColour("device" + i, mode);
         }
 
     }

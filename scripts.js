@@ -163,7 +163,8 @@ function updateRoomElementAttribute(roomHTML, type, value) {
  * @param {*} roomHTML - The HTML tag id of the room 
  */
 function updateRoomElementColour(roomHTML) {
-    if (document.getElementById(roomHTML).getAttribute("data-infrared") > 0) {
+    var infrared = parseInt(document.getElementById(roomHTML).getAttribute("data-infrared"));
+    if (infrared > 0) {
         document.getElementById(roomHTML).style = "background-color: #ea9999";
     } else {
         document.getElementById(roomHTML).style = "background-color: #b6d7a8";
@@ -177,10 +178,16 @@ function updateRoomElementColour(roomHTML) {
  * @param {*} roomHTML - The HTML tag id of the room 
  */
 function updateTextElementColour(roomHTML) {
+    // Extract date and store into variables for readability
     var temperature = document.getElementById(roomHTML).getAttribute("data-temperature");
     var illuminance = document.getElementById(roomHTML).getAttribute("data-illuminance");
     var airquality = document.getElementById(roomHTML).getAttribute("data-airquality");
     var innerHTML = document.getElementById(roomHTML).innerHTML;
+
+    // Parse data into integers as they are stored as strings
+    var temperature = parseInt(temperature);
+    var illuminance = parseInt(illuminance);
+    var airquality = parseInt(airquality);
 
     // Temperature Warning Visualisation
     if (currentMode == "temperature" && temperature > 22) {
@@ -207,7 +214,6 @@ function updateTextElementColour(roomHTML) {
     } else if (currentMode == "airquality") {
         document.getElementById(roomHTML).style = "color: #000000";
     }
-    console.log("done for" + roomHTML);
 }
 
 /**

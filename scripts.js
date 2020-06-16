@@ -187,16 +187,17 @@ function updateTextElementColour(roomHTML) {
         document.getElementById(roomHTML).style.fontWeight = "bold";
         document.getElementById(roomHTML).style.color = "#cc4125";
     } else if (currentMode == "temperature" && temperature < 10) {
-        document.getElementById(roomHTML).style = "color: #0b5394";
+        document.getElementById(roomHTML).style.color = "#0b5394";
     } else {
-        document.getElementById(roomHTML).style = "color: #000000"
+        document.getElementById(roomHTML).style.color = "#000000";
     }
 
     // Illuminance Warning Visualisation
     if (currentMode == "illuminance" && illuminance > 500) {
-        document.getElementById(roomHTML).style = "color: #ffffff; font-weight: bold";
+        document.getElementById(roomHTML).style.color = "#ffffff";
+        document.getElementById(roomHTML).style.fontWeight = "bold";
     } else if (currentMode == "illuminance") {
-        document.getElementById(roomHTML).style = "color: #000000";
+        document.getElementById(roomHTML).style.color = "#000000";
     }
 
     // Air Quality Warning Visualisation
@@ -306,6 +307,7 @@ function updateInnerHTML(mode) {
                     document.getElementById("device" + i).innerHTML = roomNames[i];
                 }
             }
+            updatePageCSS(currentMode);
             break;
         case "temperature":
             for (i = 0; i < numberOfRooms; i++) {
@@ -318,6 +320,7 @@ function updateInnerHTML(mode) {
                     document.getElementById("device" + i).innerHTML = temperature + " °C";
                 }
             }
+            updatePageCSS(currentMode);
             break;
         case "airquality":
             for (i = 0; i < numberOfRooms; i++) {
@@ -330,6 +333,7 @@ function updateInnerHTML(mode) {
                     document.getElementById("device" + i).innerHTML = airquality + " IAQ";
                 }
             }
+            updatePageCSS(currentMode);
             break;
         case "illuminance":
             for (i = 0; i < numberOfRooms; i++) {
@@ -342,6 +346,7 @@ function updateInnerHTML(mode) {
                     document.getElementById("device" + i).innerHTML = illuminance + " Lux";
                 }
             }
+            updatePageCSS(currentMode);
             break;
 
     }
@@ -356,4 +361,4 @@ updateSensorData()
 setInterval(() => { updateSensorData() }, 300000);
 
 // CSS & Page Inner HTML updated on a 10 second basis
-setInterval(() => { updatePageCSS(currentMode); updateInnerHTML(currentMode); }, 300000);
+setInterval(() => { updatePageCSS(currentMode); updateInnerHTML(currentMode); }, 10000);

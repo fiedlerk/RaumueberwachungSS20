@@ -237,7 +237,7 @@ function updatePageData(json) {
 
 
 /**
- * Goes through all room elements & updates their CSS based on their infrared
+ * Goes through all room elements & updates their CSS based on their infrared value
  */
 function updatePageCSS() {
     for (i = 0; i < numberOfRooms; i++) {
@@ -273,14 +273,7 @@ function updateSensorData() {
 
 }
 
-// Code Flow
-//Initialisation when page is first opened
-updateSensorData()
-// 5 minute interval for every API call
-setInterval(() => { updateSensorData() }, 300000);
 
-// CSS & Page Inner HTML updated on a 10 second basis
-setInterval(() => { updatePageCSS(currentMode); updateInnerHTML(currentMode); }, 10000);
 
 
 /**
@@ -351,4 +344,15 @@ function updateInnerHTML(mode) {
             break;
 
     }
+
+
 }
+
+// Code Flow
+//Initialisation when page is first opened
+updateSensorData()
+// 5 minute interval for every API call
+setInterval(() => { updateSensorData() }, 300000);
+
+// CSS & Page Inner HTML updated on a 10 second basis
+setInterval(() => { updatePageCSS(currentMode); updateInnerHTML(currentMode); }, 300000);

@@ -355,7 +355,7 @@ function updateInnerHTML(mode) {
 //Initialisation when page is first opened
 updateSensorData()
 // 5 minute interval for every API call
-setInterval(() => { updateSensorData() }, 30000);
+setInterval(() => { updateSensorData() }, 300000);
 
 // CSS & Page Inner HTML updated on a 10 second basis
 setInterval(() => {

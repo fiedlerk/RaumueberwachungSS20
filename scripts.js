@@ -21,7 +21,6 @@ The <td> tags are mapped with the above ids as a result of the above room layout
 */
 // Number of Rooms must always be set to a new number if the number of rooms in the HTML layout change, default mode is infrared
 var numberOfRooms = 24;
-var currentMode = "infrared";
 
 //Static JSON test data to locally test the website
 var testData = {
@@ -212,10 +211,10 @@ function updateTextElementColour(roomHTML, mode) {
     if (mode == "temperature" && temperature > 22) {
         document.getElementById(roomHTML).style.fontWeight = "bold";
         document.getElementById(roomHTML).style.color = "#cc4125";
-        console.log("ja also funktioniert doch");
 
     } else if (mode == "temperature" && temperature < 10) {
         document.getElementById(roomHTML).style.color = "#0b5394";
+        document.getElementById(roomHTML).style.fontWeight = "bold";
     } else {
         document.getElementById(roomHTML).style.color = "#000000";
     }
@@ -231,7 +230,7 @@ function updateTextElementColour(roomHTML, mode) {
     // Air Quality Warning Visualisation
     if (mode == "airquality" && airquality > 100) {
         document.getElementById(roomHTML).style = "color: #783f04; font-weight: bold";
-    } else if (currentMode == "airquality") {
+    } else if (mode == "airquality") {
         document.getElementById(roomHTML).style = "color: #000000";
     }
 }
@@ -356,20 +355,12 @@ function updateInnerHTML(mode) {
 //Initialisation when page is first opened
 updateSensorData()
 // 5 minute interval for every API call
-setInterval(() => { updateSensorData() }, 300000);
+setInterval(() => { updateSensorData() }, 30000);
 
 // CSS & Page Inner HTML updated on a 10 second basis
-setInterval(() => { updatePageCSS(currentMode); updateInnerHTML(currentMode); console.log(currentMode); }, 300000);
-
-
-
-// Unused Functions
-
-/**
- * Function that changes the mode & updates the page instantly to disply that mode's information
- * @param {*} newMode 
- */
-function changeMode(newMode) {
-    updatePageCSS(newMode);
-    updateInnerHTML(newMode);
-}
+setInterval(() => {
+    // The current mode is saved in data attribute in the HTML element "mode", only solution as global varible use cannot be used
+    currentMode = document.getElementById("mode").getAttribute("data-mode");
+    updatePageCSS(currentMode);
+    updateInnerHTML(currentMode); console.log(currentMode);
+}, 10000);

@@ -9,6 +9,7 @@
 </head>
 
 <div class="time" id="datetime"></div>
+<p class="mode" id="mode" data-mode: 'infrared'>Dashboard</p>
 
 
 <head>
@@ -29,7 +30,6 @@
             return i;
         }
     </script>
-
 
 
     <body onload="startTime()">
@@ -124,16 +124,16 @@
         <footer>
             <div class="footer">
                 <p class="left">Hochschule Pforzheim</p>
-                <button style="margin-left:62px; width: 50px; height: 50px; float:center; border-radius: 100%" onclick="updateInnerHTML('infrared'); var currentMode = 'infrared';">
+                <button style="margin-left:62px; width: 50px; height: 50px; float:center; border-radius: 100%" onclick="updateInnerHTML('infrared'); document.getElementById('mode').setAttribute('data-mode', 'infrared');">
                     <img src="teacher.svg" width=100% height=100%>
                 </button>
-                <button style="margin-top:5px; margin-left:15px;  width: 50px; height: 50px; border-radius: 100%" onclick="updateInnerHTML('temperature'); var currentMode = 'temperature';">
+                <button style="margin-top:5px; margin-left:15px;  width: 50px; height: 50px; border-radius: 100%" onclick="updateInnerHTML('temperature'); document.getElementById('mode').setAttribute('data-mode', 'temperature');">
                     <img src="thermometer.svg" width=100% height=100%>
                 </button>
-                <button style="margin-top:5px; margin-left:15px; width: 50px; height: 50px; border-radius: 100%" onclick="updateInnerHTML('illuminance'); var currentMode = 'illuminance';">
+                <button style="margin-top:5px; margin-left:15px; width: 50px; height: 50px; border-radius: 100%" onclick="updateInnerHTML('illuminance'); document.getElementById('mode').setAttribute('data-mode', 'illuminance');">
                     <img src="idea.svg" width=100% height=100%>
                 </button>
-                <button style="margin-top:5px; margin-left:15px; width: 50px; height: 50px; border-radius: 100%;" onclick="updateInnerHTML('airquality'); var currentMode = 'airquality';">
+                <button style="margin-top:5px; margin-left:15px; width: 50px; height: 50px; border-radius: 100%;" onclick="updateInnerHTML('airquality'); document.getElementById('mode').setAttribute('data-mode', 'airquality');">
                     <img src="co2.svg" width=100% height=100%>
                 </button>
                 <p class="right">Powered by Asseco</p>
